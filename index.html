@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Text</title>
   <link href="third_party/material-components-web/material-components-web.min.css" rel="stylesheet">
@@ -7,6 +8,7 @@
   <link href="css/app.css" rel="stylesheet">
   <link href="css/print.css" rel="stylesheet" media="print">
 </head>
+
 <body>
   <div id="window-container">
     <div id="sidebar">
@@ -18,31 +20,19 @@
 
         <ul id="file-menu">
           <li>
-            <button
-                id="file-menu-new"
-                class="sidebar-button"
-                i18n-content="fileMenuNew">
+            <button id="file-menu-new" class="sidebar-button" i18n-content="fileMenuNew">
             </button>
           </li>
           <li>
-            <button
-                id="file-menu-open"
-                class="sidebar-button"
-                i18n-content="fileMenuOpen">
+            <button id="file-menu-open" class="sidebar-button" i18n-content="fileMenuOpen">
             </button>
           </li>
           <li>
-            <button
-                id="file-menu-save"
-                class="sidebar-button"
-                i18n-content="fileMenuSave">
+            <button id="file-menu-save" class="sidebar-button" i18n-content="fileMenuSave">
             </button>
           </li>
           <li>
-            <button
-                id="file-menu-saveas"
-                class="sidebar-button"
-                i18n-content="fileMenuSaveas">
+            <button id="file-menu-saveas" class="sidebar-button" i18n-content="fileMenuSaveas">
             </button>
           </li>
         </ul>
@@ -56,10 +46,7 @@
         <hr>
         <ul class="settings-switch-ul">
           <li>
-            <button
-                id="open-settings"
-                class="sidebar-button"
-                i18n-content="menuSettings">
+            <button id="open-settings" class="sidebar-button" i18n-content="menuSettings">
             </button>
           </li>
         </ul>
@@ -71,9 +58,8 @@
           <ul id="settings-list">
             <li>
               <label for="setting-fontsize" i18n-content="fontsizeSetting"></label>
-              <input type="text" id="setting-fontsize" size="1" maxlength="2"
-                     pattern="\d\d?" value="14"
-                     i18n-values="title:fontsizeTooltip">
+              <input type="text" id="setting-fontsize" size="1" maxlength="2" pattern="\d\d?" value="14"
+                i18n-values="title:fontsizeTooltip">
             </li>
             <li>
               <label for="setting-spacestab" i18n-content="spacestabSetting"></label>
@@ -81,16 +67,14 @@
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                    <input type="checkbox" id="setting-spacestab"
-                        class="mdc-switch__native-control" role="switch">
+                    <input type="checkbox" id="setting-spacestab" class="mdc-switch__native-control" role="switch">
                   </div>
                 </div>
               </div>
             </li>
             <li>
               <label for="setting-tabsize" i18n-content="tabsizeSetting"></label>
-              <input type="text" id="setting-tabsize" size="1" maxlength="2"
-                     pattern="\d\d?" value="8">
+              <input type="text" id="setting-tabsize" size="1" maxlength="2" pattern="\d\d?" value="8">
             </li>
             <li>
               <label for="setting-wraplines" i18n-content="wraplinesSetting"></label>
@@ -98,8 +82,7 @@
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                    <input type="checkbox" id="setting-wraplines"
-                        class="mdc-switch__native-control" role="switch">
+                    <input type="checkbox" id="setting-wraplines" class="mdc-switch__native-control" role="switch">
                   </div>
                 </div>
               </div>
@@ -110,8 +93,7 @@
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                    <input type="checkbox" id="setting-linenumbers"
-                        class="mdc-switch__native-control" role="switch">
+                    <input type="checkbox" id="setting-linenumbers" class="mdc-switch__native-control" role="switch">
                   </div>
                 </div>
               </div>
@@ -122,8 +104,7 @@
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                    <input type="checkbox" id="setting-smartindent"
-                        class="mdc-switch__native-control" role="switch">
+                    <input type="checkbox" id="setting-smartindent" class="mdc-switch__native-control" role="switch">
                   </div>
                 </div>
               </div>
@@ -134,8 +115,7 @@
                 <div class="mdc-switch__track"></div>
                 <div class="mdc-switch__thumb-underlay">
                   <div class="mdc-switch__thumb">
-                    <input type="checkbox" id="setting-alwaysontop"
-                        class="mdc-switch__native-control" role="switch">
+                    <input type="checkbox" id="setting-alwaysontop" class="mdc-switch__native-control" role="switch">
                   </div>
                 </div>
               </div>
@@ -145,7 +125,8 @@
               <div class="mdc-form-field">
                 <label for="setting-theme-default" i18n-content="DeviceThemeOption"></label>
                 <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-default" name="setting-theme" value="default">
+                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-default" name="setting-theme"
+                    value="default">
                   <div class="mdc-radio__background">
                     <div class="mdc-radio__outer-circle"></div>
                     <div class="mdc-radio__inner-circle"></div>
@@ -155,7 +136,8 @@
               <div class="mdc-form-field">
                 <label for="setting-theme-light" i18n-content="LightThemeOption"></label>
                 <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-light" name="setting-theme" value="light">
+                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-light" name="setting-theme"
+                    value="light">
                   <div class="mdc-radio__background">
                     <div class="mdc-radio__outer-circle"></div>
                     <div class="mdc-radio__inner-circle"></div>
@@ -165,7 +147,8 @@
               <div class="mdc-form-field">
                 <label for="setting-theme-dark" i18n-content="DarkThemeOption"></label>
                 <div class="mdc-radio">
-                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-dark" name="setting-theme" value="dark">
+                  <input class="mdc-radio__native-control" type="radio" id="setting-theme-dark" name="setting-theme"
+                    value="dark">
                   <div class="mdc-radio__background">
                     <div class="mdc-radio__outer-circle"></div>
                     <div class="mdc-radio__inner-circle"></div>
@@ -176,9 +159,7 @@
             <div class="group" aria-labelledby="setting-help-heading">
               <h2 id="setting-help-heading" i18n-content="helpSection"></h2>
               <div class="mdc-form-field">
-                <button
-                    id="open-shortcuts"
-                    class="sidebar-button">
+                <button id="open-shortcuts" class="sidebar-button">
                   <span i18n-content="menuShortcuts"></span>
                   <span class="icon material-icons">launch</span>
                 </button>
@@ -196,35 +177,25 @@
     </div>
     <div id="main-container">
       <header>
-        <button class="mdc-icon-button material-icons" id="toggle-sidebar" i18n-values="title:openSidebarButton;aria-label:openSidebarButton">menu</button>
+        <button class="mdc-icon-button material-icons" id="toggle-sidebar"
+          i18n-values="title:openSidebarButton;aria-label:openSidebarButton">menu</button>
         <div class="search-container">
           <div id="search-input-container">
-            <input type="search" id="search-input"
-                i18n-values="placeholder:searchPlaceholder">
+            <input type="search" id="search-input" i18n-values="placeholder:searchPlaceholder">
             <span id="search-counting"></span>
           </div>
-          <button
-              class="search-navigation-button mdc-icon-button material-icons"
-              id="search-previous-button"
-              i18n-values="title:searchPreviousButton;aria-label:searchPreviousButton">expand_less</button>
-          <button
-              class="search-navigation-button mdc-icon-button material-icons"
-              id="search-next-button"
-              i18n-values="title:searchNextButton;aria-label:searchNextButton">expand_more</button>
+          <button class="search-navigation-button mdc-icon-button material-icons" id="search-previous-button"
+            i18n-values="title:searchPreviousButton;aria-label:searchPreviousButton">expand_less</button>
+          <button class="search-navigation-button mdc-icon-button material-icons" id="search-next-button"
+            i18n-values="title:searchNextButton;aria-label:searchNextButton">expand_more</button>
         </div>
         <div id="title-filename" i18n-content="errorTitle"></div>
-        <button
-            class="mdc-icon-button material-icons"
-            id="window-minimize"
-            i18n-values="title:minimizeButton;aria-label:minimizeButton">remove</button>
-        <button
-            class="mdc-icon-button material-icons"
-            id="window-maximize"
-            i18n-values="title:maximizeButton;aria-label:maximizeButton">crop_square</button>
-        <button
-            class="mdc-icon-button material-icons"
-            id="window-close"
-            i18n-values="title:closeButton;aria-label:closeButton">close</button>
+        <button class="mdc-icon-button material-icons" id="window-minimize"
+          i18n-values="title:minimizeButton;aria-label:minimizeButton">remove</button>
+        <button class="mdc-icon-button material-icons" id="window-maximize"
+          i18n-values="title:maximizeButton;aria-label:maximizeButton">crop_square</button>
+        <button class="mdc-icon-button material-icons" id="window-close"
+          i18n-values="title:closeButton;aria-label:closeButton">close</button>
       </header>
 
       <div id="editor" role="main" aria-labelledby="title-filename"></div>
@@ -262,4 +233,5 @@
   <!-- /JS -->
 
 </body>
+
 </html>

@@ -80,8 +80,8 @@ function EditorCodeMirror(editorElement, settings) {
     }
   };
 
-  this.lightTheme_ = CodeMirror.view.EditorView.theme(themeStyles, {dark: false});
-  this.darkTheme_ = CodeMirror.view.EditorView.theme(themeStyles, {dark: true});
+  this.lightTheme_ = CodeMirror.view.EditorView.theme(themeStyles, { dark: false });
+  this.darkTheme_ = CodeMirror.view.EditorView.theme(themeStyles, { dark: true });
 
   /**
    * Extensions don't need to be loaded here because we will always load a
@@ -98,81 +98,82 @@ function EditorCodeMirror(editorElement, settings) {
 }
 
 EditorCodeMirror.EXTENSION_TO_MODE = {
-    'bash': 'shell',
-    'coffee': 'coffeeScript',
-    'c': 'cpp',
-    'c++': 'cpp',
-    'cc': 'cpp',
-    'cs': 'cpp',
-    'css': 'css',
-    'cpp': 'cpp',
-    'cxx': 'cpp',
-    'diff': 'diff',
-    'gemspec': 'ruby',
-    'go': 'go',
-    'h': 'cpp',
-    'hh': 'cpp',
-    'hpp': 'cpp',
-    'htm': 'html',
-    'html': 'html',
-    'java': 'java',
-    'js': 'javascript',
-    'json': 'json',
-    'latex': 'stex',
-    'less': 'less',
-    'ltx': 'stex',
-    'lua': 'lua',
-    'markdown': 'markdown',
-    'md': 'markdown',
-    'patch': 'diff',
-    'pgsql': 'sql',
-    'pl': 'perl',
-    'pm': 'perl',
-    'php': 'php',
-    'phtml': 'php',
-    'py': 'python',
-    'rb': 'ruby',
-    'rdf': 'xml',
-    'rs': 'rust',
-    'rss': 'xml',
-    'ru': 'ruby',
-    'sh': 'shell',
-    'sql': 'sql',
-    'svg': 'xml',
-    'tex': 'stex',
-    'xhtml': 'html',
-    'xml': 'xml',
-    'yaml': 'yaml'};
+  'bash': 'shell',
+  'coffee': 'coffeeScript',
+  'c': 'cpp',
+  'c++': 'cpp',
+  'cc': 'cpp',
+  'cs': 'cpp',
+  'css': 'css',
+  'cpp': 'cpp',
+  'cxx': 'cpp',
+  'diff': 'diff',
+  'gemspec': 'ruby',
+  'go': 'go',
+  'h': 'cpp',
+  'hh': 'cpp',
+  'hpp': 'cpp',
+  'htm': 'html',
+  'html': 'html',
+  'java': 'java',
+  'js': 'javascript',
+  'json': 'json',
+  'latex': 'stex',
+  'less': 'less',
+  'ltx': 'stex',
+  'lua': 'lua',
+  'markdown': 'markdown',
+  'md': 'markdown',
+  'patch': 'diff',
+  'pgsql': 'sql',
+  'pl': 'perl',
+  'pm': 'perl',
+  'php': 'php',
+  'phtml': 'php',
+  'py': 'python',
+  'rb': 'ruby',
+  'rdf': 'xml',
+  'rs': 'rust',
+  'rss': 'xml',
+  'ru': 'ruby',
+  'sh': 'shell',
+  'sql': 'sql',
+  'svg': 'xml',
+  'tex': 'stex',
+  'xhtml': 'html',
+  'xml': 'xml',
+  'yaml': 'yaml'
+};
 
 {
   const t = window.CodeMirror.highlight.tags;
   EditorCodeMirror.HIGHLIGHT_STYLE = window.CodeMirror.language.HighlightStyle.define([
-    {tag: t.variableName, color: 'var(--ta-token-variable-color)'},
-    {tag: t.definition(t.variableName), color: 'var(--ta-token-definition-color)'},
-    {tag: t.propertyName, color: 'var(--ta-token-property-color)'},
-    {tag: [t.typeName, t.className, t.namespace, t.macroName], color: 'var(--ta-token-type-color)'},
-    {tag: [t.special(t.name), t.constant(t.className)], color: 'var(--ta-token-variable-special-color)'},
-    {tag: t.standard(t.variableName), color: 'var(--ta-token-builtin-color)'},
-    {tag: [t.number, t.literal, t.unit], color: 'var(--ta-token-number-color)'},
-    {tag: t.string, color: 'var(--ta-token-string-color)'},
-    {tag: [t.special(t.string), t.regexp, t.escape], color: 'var(--ta-token-string-special-color)'},
-    {tag: [t.atom, t.unit, t.labelName, t.bool], color: 'var(--ta-token-atom-color)'},
-    {tag: t.keyword, color: 'var(--ta-token-keyword-color)'},
-    {tag: [t.comment, t.quote], color: 'var(--ta-token-comment-color)'},
-    {tag: t.invalid, backgroundColor: 'var(--ta-token-invalid-background-color)', color: 'var(--ta-token-invalid-color) !important'},
-    {tag: t.meta, color: 'var(--ta-token-meta-color)'},
-    {tag: t.tagName, color: 'var(--ta-token-tag-color)'},
-    {tag: t.attributeName, color: 'var(--ta-token-attribute-color)'},
-    {tag: t.attributeValue, color: 'var(--ta-token-attribute-value-color)'},
-    {tag: t.heading, color: 'var(--ta-token-heading-color)'},
-    {tag: t.quote, color: 'var(--ta-token-quote-color)'},
-    {tag: t.link, color: 'var(--ta-token-link-color)'},
-    {tag: t.url, color: 'var(--ta-token-url-color)'},
-    {tag: t.inserted, color: 'var(--ta-token-inserted-color)'},
-    {tag: t.deleted, color: 'var(--ta-token-deleted-color)'},
-    {tag: t.contentSeparator, color: 'var(--ta-token-content-separator-color)'},
-    {tag: t.strong, fontWeight: 'bold'},
-    {tag: t.emphasis, fontStyle: 'italic'},
+    { tag: t.variableName, color: 'var(--ta-token-variable-color)' },
+    { tag: t.definition(t.variableName), color: 'var(--ta-token-definition-color)' },
+    { tag: t.propertyName, color: 'var(--ta-token-property-color)' },
+    { tag: [t.typeName, t.className, t.namespace, t.macroName], color: 'var(--ta-token-type-color)' },
+    { tag: [t.special(t.name), t.constant(t.className)], color: 'var(--ta-token-variable-special-color)' },
+    { tag: t.standard(t.variableName), color: 'var(--ta-token-builtin-color)' },
+    { tag: [t.number, t.literal, t.unit], color: 'var(--ta-token-number-color)' },
+    { tag: t.string, color: 'var(--ta-token-string-color)' },
+    { tag: [t.special(t.string), t.regexp, t.escape], color: 'var(--ta-token-string-special-color)' },
+    { tag: [t.atom, t.unit, t.labelName, t.bool], color: 'var(--ta-token-atom-color)' },
+    { tag: t.keyword, color: 'var(--ta-token-keyword-color)' },
+    { tag: [t.comment, t.quote], color: 'var(--ta-token-comment-color)' },
+    { tag: t.invalid, backgroundColor: 'var(--ta-token-invalid-background-color)', color: 'var(--ta-token-invalid-color) !important' },
+    { tag: t.meta, color: 'var(--ta-token-meta-color)' },
+    { tag: t.tagName, color: 'var(--ta-token-tag-color)' },
+    { tag: t.attributeName, color: 'var(--ta-token-attribute-color)' },
+    { tag: t.attributeValue, color: 'var(--ta-token-attribute-value-color)' },
+    { tag: t.heading, color: 'var(--ta-token-heading-color)' },
+    { tag: t.quote, color: 'var(--ta-token-quote-color)' },
+    { tag: t.link, color: 'var(--ta-token-link-color)' },
+    { tag: t.url, color: 'var(--ta-token-url-color)' },
+    { tag: t.inserted, color: 'var(--ta-token-inserted-color)' },
+    { tag: t.deleted, color: 'var(--ta-token-deleted-color)' },
+    { tag: t.contentSeparator, color: 'var(--ta-token-content-separator-color)' },
+    { tag: t.strong, fontWeight: 'bold' },
+    { tag: t.emphasis, fontStyle: 'italic' },
   ]);
 }
 
@@ -194,7 +195,7 @@ EditorCodeMirror.prototype.newState = function(opt_content) {
           key: 'Enter',
           run: ({ state, dispatch }) => {
             if (this.settings_.get('smartindent')) {
-              return window.CodeMirror.commands.insertNewlineAndIndent({state, dispatch});
+              return window.CodeMirror.commands.insertNewlineAndIndent({ state, dispatch });
             }
             // This copies CodeMirror's insertNewlineAndIndent but with some differences:
             // It doesn't check for matching brackets or an indent context.
@@ -225,18 +226,18 @@ EditorCodeMirror.prototype.newState = function(opt_content) {
         {
           key: 'Tab',
           preventDefault: true,
-          run: ({state, dispatch}) => {
+          run: ({ state, dispatch }) => {
             // Get the setting value again because it might have changed.
             const useSpace = this.settings_.get('spacestab');
 
             // If the indent unit is tab, use the built-in insertTab function.
             if (!useSpace) {
-              return window.CodeMirror.commands.insertTab({state, dispatch});
+              return window.CodeMirror.commands.insertTab({ state, dispatch });
             }
             // If something is selected, use the built-in indentMore function.
             // It automatically handles spaces vs tabs.
             if (state.selection.ranges.some(r => !r.empty)) {
-              return window.CodeMirror.commands.indentMore({state, dispatch});
+              return window.CodeMirror.commands.indentMore({ state, dispatch });
             }
 
             const indentContext = new window.CodeMirror.language.IndentContext(state);
@@ -246,7 +247,7 @@ EditorCodeMirror.prototype.newState = function(opt_content) {
             const tabSize = indentContext.unit;
             const numSpaces = tabSize - cursorColumn % tabSize;
             dispatch(state.update(state.replaceSelection(' '.repeat(numSpaces)),
-                {scrollIntoView: true, userEvent: "input"}));
+              { scrollIntoView: true, userEvent: "input" }));
             return true;
           },
         },
@@ -355,7 +356,7 @@ EditorCodeMirror.prototype.setFontSize = function(fontSize) {
 /**
  * @param {number} size
  */
-EditorCodeMirror.prototype.setTabSize = function(size) {  
+EditorCodeMirror.prototype.setTabSize = function(size) {
   const useSpace = this.settings_.get('spacestab');
   this.editorView_.dispatch({
     effects: [

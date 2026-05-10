@@ -23,7 +23,7 @@ Background.prototype.ifShowFrame_ = function() {
   }
 
   return os === 'linux' && version < 27 ||
-         os === 'mac' && version < 25;
+    os === 'mac' && version < 25;
 };
 
 /**
@@ -83,14 +83,14 @@ Background.prototype.launch = function(launchData) {
 
   for (var i = 0; i < entries.length; i++) {
     chrome.fileSystem.getWritableEntry(
-        entries[i],
-        function(entry) {
-          if (this.windows_.length > 0) {
-            this.windows_[0].openTabs([entry]);
-          } else if (!chrome.runtime.lastError) {
-            this.entriesToOpen_.push(entry);
-          }
-        }.bind(this));
+      entries[i],
+      function(entry) {
+        if (this.windows_.length > 0) {
+          this.windows_[0].openTabs([entry]);
+        } else if (!chrome.runtime.lastError) {
+          this.entriesToOpen_.push(entry);
+        }
+      }.bind(this));
   }
 };
 
@@ -102,7 +102,7 @@ Background.prototype.onWindowClosed = function(win) {
   console.log('Window closed:', win);
   if (!win.contentWindow || !win.contentWindow.textApp) {
     console.warn('No TextApp object in the window being closed:',
-                 win.contentWindow, win.contentWindow.textApp);
+      win.contentWindow, win.contentWindow.textApp);
     return;
   }
   var textApp = win.contentWindow.textApp;
@@ -126,7 +126,7 @@ Background.prototype.retainFiles_ = function(toRetain) {
     var entryId = chrome.fileSystem.retainEntry(toRetain[i]);
     toRetainEntryIds.push(entryId);
   }
-  chrome.storage.local.set({'retainedEntryIds': toRetainEntryIds});
+  chrome.storage.local.set({ 'retainedEntryIds': toRetainEntryIds });
 };
 
 /**

@@ -99,11 +99,11 @@ Tab.prototype.save = function(opt_callbackDone) {
 
 Tab.prototype.reportWriteError_ = function(e) {
   this.dialogController_.setText(
-      // TODO: Replace this with i18n message
-      'Error saving file: ' + util.fsErrorStr(e));
+    // TODO: Replace this with i18n message
+    'Error saving file: ' + util.fsErrorStr(e));
   this.dialogController_.resetButtons();
   this.dialogController_.addButton('ok',
-      chrome.i18n.getMessage('okDialogButton'));
+    chrome.i18n.getMessage('okDialogButton'));
   this.dialogController_.show();
 };
 
@@ -149,14 +149,14 @@ Tabs.prototype.chooseEntry = function(params, callback) {
     return;
   }
   chrome.fileSystem.chooseEntry(
-      params,
-      function(entry) {
-        if (entry) {
-          chrome.runtime.getBackgroundPage(function(bg) {
-            bg.background.copyFileEntry(entry, callback);
-          });
-        }
-      });
+    params,
+    function(entry) {
+      if (entry) {
+        chrome.runtime.getBackgroundPage(function(bg) {
+          bg.background.copyFileEntry(entry, callback);
+        });
+      }
+    });
 };
 
 /**
@@ -170,18 +170,18 @@ Tabs.prototype.chooseEntry = function(params, callback) {
 Tabs.prototype.chooseEntries = function(params, callback, opt_oncancel) {
   params.acceptsMultiple = true;
   chrome.fileSystem.chooseEntry(
-      params,
-      function(entries) {
-        if (entries) {
-          chrome.runtime.getBackgroundPage(function(bg) {
-            for (var i = 0; i < entries.length; i++)
-              bg.background.copyFileEntry(entries[i], callback);
-          });
-        } else {
-          if (opt_oncancel)
-            opt_oncancel();
-        }
-      });
+    params,
+    function(entries) {
+      if (entries) {
+        chrome.runtime.getBackgroundPage(function(bg) {
+          for (var i = 0; i < entries.length; i++)
+            bg.background.copyFileEntry(entries[i], callback);
+        });
+      } else {
+        if (opt_oncancel)
+          opt_oncancel();
+      }
+    });
 };
 
 Tabs.prototype.getTabById = function(id) {
@@ -217,7 +217,7 @@ Tabs.prototype.newTab = function(opt_content, opt_entry) {
   var lineEndings = util.guessLineEndings(opt_content);
 
   var tab = new Tab(id, session, lineEndings, opt_entry || null,
-                    this.dialogController_);
+    this.dialogController_);
   this.tabs_.push(tab);
   $.event.trigger('newtab', tab);
   this.showTab(tab.getId());
@@ -228,11 +228,11 @@ Tabs.prototype.newTab = function(opt_content, opt_entry) {
  * @param {number} newIndex
  * Move a {Tab} from oldIndex to newIndex
  */
-Tabs.prototype.reorder = function (oldIndex, newIndex) {
+Tabs.prototype.reorder = function(oldIndex, newIndex) {
   this.tabs_.splice(
-      newIndex, // specifies at what position to add items
-      0, // no items will be removed
-      this.tabs_.splice(oldIndex, 1)[0]); // item to be added
+    newIndex, // specifies at what position to add items
+    0, // no items will be removed
+    this.tabs_.splice(oldIndex, 1)[0]); // item to be added
 };
 
 Tabs.prototype.getTabIndex = function(tab) {
@@ -340,8 +340,8 @@ Tabs.prototype.closeCurrent = function() {
 
 Tabs.prototype.openFiles = function() {
   this.chooseEntries(
-      {'type': 'openWritableFile'},
-      this.openFileEntry.bind(this));
+    { 'type': 'openWritableFile' },
+    this.openFileEntry.bind(this));
 };
 
 /**
@@ -383,16 +383,16 @@ Tabs.prototype.promptAllUnsavedFromIndex_ = function(i, callback) {
  */
 Tabs.prototype.promptSave_ = function(tab, callbackShowDialog) {
   this.dialogController_.setText(
-      chrome.i18n.getMessage('saveFilePromptLine1', tab.getName()),
-      chrome.i18n.getMessage('saveFilePromptLine2')
+    chrome.i18n.getMessage('saveFilePromptLine1', tab.getName()),
+    chrome.i18n.getMessage('saveFilePromptLine2')
   );
   this.dialogController_.resetButtons();
   this.dialogController_.addButton('yes',
-      chrome.i18n.getMessage('yesDialogButton'));
+    chrome.i18n.getMessage('yesDialogButton'));
   this.dialogController_.addButton('no',
-      chrome.i18n.getMessage('noDialogButton'));
+    chrome.i18n.getMessage('noDialogButton'));
   this.dialogController_.addButton('cancel',
-      chrome.i18n.getMessage('cancelDialogButton'));
+    chrome.i18n.getMessage('cancelDialogButton'));
   this.dialogController_.show(callbackShowDialog);
 };
 
@@ -428,20 +428,20 @@ Tabs.prototype.saveAs = function(opt_tab, opt_callback) {
   }
 
   var suggestedName = tab.getEntry() && tab.getEntry().name ||
-                      util.sanitizeFileName(tab.session_.doc.line(1).text) ||
-                      tab.getName();
+    util.sanitizeFileName(tab.session_.doc.line(1).text) ||
+    tab.getName();
 
   if (!util.getExtension(suggestedName)) {
-      suggestedName += '.txt';
+    suggestedName += '.txt';
   }
   this.chooseEntry(
-      {'type': 'saveFile', 'suggestedName': suggestedName},
-      function(entry) {
-        this.saveEntry_(tab, entry, opt_callback);
-        if (opt_callback) {
-          opt_callback();
-        }
-      }.bind(this));
+    { 'type': 'saveFile', 'suggestedName': suggestedName },
+    function(entry) {
+      this.saveEntry_(tab, entry, opt_callback);
+      if (opt_callback) {
+        opt_callback();
+      }
+    }.bind(this));
 };
 
 /**
@@ -495,8 +495,8 @@ Tabs.prototype.readFileToNewTab_ = function(entry, file) {
   reader.onloadend = function(e) {
     self.newTab(this.result, entry);
     if (self.tabs_.length === 2 &&
-        !self.tabs_[0].getEntry() &&
-        self.tabs_[0].isSaved()) {
+      !self.tabs_[0].getEntry() &&
+      self.tabs_[0].isSaved()) {
       self.close(self.tabs_[0].getId());
     }
   };

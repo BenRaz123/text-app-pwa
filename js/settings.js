@@ -17,7 +17,7 @@ function Settings() {
 
   /** The media query list to detect if the preferred color scheme is dark. */
   this.colorSchemeMatcherDark_ =
-      window.matchMedia('(prefers-color-scheme: dark)');
+    window.matchMedia('(prefers-color-scheme: dark)');
   this.colorSchemeMatcherDark_.addEventListener('change', () => {
     if (this.settings_['theme'] === 'default') {
       $.event.trigger('settingschange', ['theme', this.get('theme')]);
@@ -35,17 +35,17 @@ Settings.AREA = 'sync';
  * @type {Object.<string, Object>}
  */
 Settings.SETTINGS = {
-  'alwaysontop': {'default': false, 'type': 'boolean', 'widget': 'checkbox'},
-  'fontsize': {'default': 14, 'type': 'number', 'widget': 'number'},
-  'linenumbers': {'default': true, 'type': 'boolean', 'widget': 'checkbox'},
-  'sidebaropen': {'default': false, 'type': 'boolean', 'widget': null},
-  'sidebarwidth': {'default': 220, 'type': 'integer', 'widget': null},
-  'smartindent': {'default': true, 'type': 'boolean', 'widget': 'checkbox'},
-  'spacestab': {'default': true, 'type': 'boolean', 'widget': 'checkbox'},
-  'tabsize': {'default': 4, 'type': 'integer', 'widget': 'number'},
-  'theme': {'default': 'default', 'type': 'string', 'widget': 'radio'},
-  'wraplines': {'default': true, 'type': 'boolean', 'widget': 'checkbox'},
-  'search': {'default': true, 'type': 'boolean', 'widget': 'search'},
+  'alwaysontop': { 'default': false, 'type': 'boolean', 'widget': 'checkbox' },
+  'fontsize': { 'default': 14, 'type': 'number', 'widget': 'number' },
+  'linenumbers': { 'default': true, 'type': 'boolean', 'widget': 'checkbox' },
+  'sidebaropen': { 'default': false, 'type': 'boolean', 'widget': null },
+  'sidebarwidth': { 'default': 220, 'type': 'integer', 'widget': null },
+  'smartindent': { 'default': true, 'type': 'boolean', 'widget': 'checkbox' },
+  'spacestab': { 'default': true, 'type': 'boolean', 'widget': 'checkbox' },
+  'tabsize': { 'default': 4, 'type': 'integer', 'widget': 'number' },
+  'theme': { 'default': 'default', 'type': 'string', 'widget': 'radio' },
+  'wraplines': { 'default': true, 'type': 'boolean', 'widget': 'checkbox' },
+  'search': { 'default': true, 'type': 'boolean', 'widget': 'search' },
 };
 
 Settings.prototype.removeOldSettings_ = function() {

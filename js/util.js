@@ -34,7 +34,7 @@ util.handleFSError = function(e) {
  * Truncate the file and write the content.
  */
 util.writeFile = function(entry, content, onsuccess, opt_onerror) {
-  var blob = new Blob([content], {type: 'text/plain'});
+  var blob = new Blob([content], { type: 'text/plain' });
   entry.createWriter(function(writer) {
     writer.onerror = opt_onerror ? opt_onerror : util.handleFSError;
     writer.onwrite = util.writeToWriter_.bind(null, writer, blob, onsuccess);
