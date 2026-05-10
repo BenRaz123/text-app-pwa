@@ -7,7 +7,7 @@ Commits aimed at these todos will cite them as following: "[todo/4] removed var 
 1. [ ] Create Webmanifest
 2. [ ] Use ESBuild
 3. [ ] Write custom `i18n`
-4. [ ] Use modern ES6 Features`
+4. [ ] Use modern ES6 Features
     - Classes
     - Private members
     - Modules
