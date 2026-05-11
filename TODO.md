@@ -14,3 +14,4 @@ Commits aimed at these todos will cite them as following: "[todo/4] removed var 
 5. [ ] (5) Vim Motions???
     - Might use [replit/codemirror-vim](https://github.com/replit/codemirror-vim) but would need typescript (6) for that
 6. [ ] (6) Use TypeScript???
+7. [ ] (7) Update README
